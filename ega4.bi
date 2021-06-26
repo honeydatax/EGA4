@@ -82,7 +82,7 @@ public function converts(names as string,src as string,p1 as any ptr)as integer
 		
 	'close #ff
 
-	head1.signature=cvs("EGA4")
+	head1.signature=cvi("EGA4")
 	head1.w=ww
 	head1.h=h
 	byten=7
