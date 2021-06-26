@@ -118,10 +118,10 @@ public function converts(names as string,p1 as any ptr)as integer
 					
 					bitn=bitn-1
 					if bitn < 0 then
-						img[byten+(hh*0)]=nbyteb
-						img[byten+(hh*1)+1]=nbyteg
-						img[byten+(hh*2)+1]=nbyter
-						img[byten+(hh*3)+1]=nbytebb
+						'img[byten+(hh*0)]=nbyteb
+						'img[byten+(hh*1)+1]=nbyteg
+						'img[byten+(hh*2)+1]=nbyter
+						'img[byten+(hh*3)+1]=nbytebb
 						nbyteb=0
 						nbyteg=0
 						nbyter=0
@@ -134,7 +134,7 @@ public function converts(names as string,p1 as any ptr)as integer
 	ff=freeFile()
 	open names for binary access write as ff
 		put #ff,1,head1,12
-		put #ff,13,img,www
+		put #ff,13,*img,www
 	close #ff
 	deallocate(img)
 	return 0
