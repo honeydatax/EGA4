@@ -47,7 +47,7 @@ end function
 
 
 
-public function converts(names as string,p1 as any ptr)as integer
+public function converts(names as string,src as string,p1 as any ptr)as integer
 	dim ff as integer
 	dim nbytebb as integer
 	dim nbyteb as integer
@@ -70,19 +70,25 @@ public function converts(names as string,p1 as any ptr)as integer
 	dim h as integer
 	dim img as byte ptr
 	dim head1 as head
-	w=getw(names)
-	h=geth(names)
+	w=getw(src)
+	h=geth(src)
 	ww=w/8
 	if ww*8<>w then ww=ww+1
 	hh=ww*h
 	www=(ww*h)*4
+	ff=freeFile()
+	'open "debug.txt" for output as ff
+	'	print #ff,"ww="+str(ww)
+		
+	'close #ff
+
 	head1.signature=cvs("EGA4")
 	head1.w=ww
 	head1.h=h
 	byten=7
 	img=allocate(www+8)
-		for x=0 to w
-			for y= 0 to h
+		for x=0 to h-1
+			for y= 0 to w-1
 					colors=point(x,y)
 					reds=lobyte(hiword(colors))/128
 					greens=hibyte(loword(colors))/128
@@ -118,10 +124,10 @@ public function converts(names as string,p1 as any ptr)as integer
 					
 					bitn=bitn-1
 					if bitn < 0 then
-						'img[byten+(hh*0)]=nbyteb
-						'img[byten+(hh*1)+1]=nbyteg
-						'img[byten+(hh*2)+1]=nbyter
-						'img[byten+(hh*3)+1]=nbytebb
+						img[byten+(hh*0)]=nbyteb
+						img[byten+(hh*1)]=nbyteg
+						img[byten+(hh*2)]=nbyter
+						img[byten+(hh*3)]=nbytebb
 						nbyteb=0
 						nbyteg=0
 						nbyter=0
