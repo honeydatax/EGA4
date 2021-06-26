@@ -1,0 +1,16 @@
+EGA4 file open source file format
+extension .ega
+
+
+head:
+offset 	| size 		| name 		|
+------------------------------------
+0		| 4 bytes	|signature 	|EGA4
+4		| 4 bytes   | w         |
+8		| 4 bytes   | h			|
+
+
+body:
+
+planar 8 bits ega format 4 planar bitmaps red green blue brish
+
