@@ -84,7 +84,7 @@ public function converts(names as string,src as string,p1 as any ptr)as integer
 	img=allocate(www+8)
 		for y=0 to h-1
 			for x= 0 to w-1
-					colors=point(x,y)
+					colors=point(x,y,p1)
 					reds=lobyte(hiword(colors))/128
 					greens=hibyte(loword(colors))/128
 					blues=lobyte(loword(colors))/128   
