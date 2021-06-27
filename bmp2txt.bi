@@ -91,7 +91,7 @@ public function converts(names as string,src as string,p1 as any ptr)as integer
 	sbrish="static unsigned char picure_brish[] = {"+chr(13)+chr(10)
 		for y=0 to h-1
 			for x= 0 to w-1
-					colors=point(x,y)
+					colors=point(x,y,p1)
 					reds=lobyte(hiword(colors))/128
 					greens=hibyte(loword(colors))/128
 					blues=lobyte(loword(colors))/128   
@@ -144,10 +144,10 @@ public function converts(names as string,src as string,p1 as any ptr)as integer
 						sred=sred+" "+chr(13)+chr(10)
 						sbrish=sbrish+" "+chr(13)+chr(10)
 		next 
-						sblue=sblue+" 0"+chr(13)+chr(10)
-						sgreen=sgreen+" 0"+chr(13)+chr(10)
-						sred=sred+" 0"+chr(13)+chr(10)
-						sbrish=sbrish+" 0"+chr(13)+chr(10)
+						sblue=sblue+" 0 }"+chr(13)+chr(10)
+						sgreen=sgreen+" 0 }"+chr(13)+chr(10)
+						sred=sred+" 0 }"+chr(13)+chr(10)
+						sbrish=sbrish+" 0 }"+chr(13)+chr(10)
 
 	ff=freeFile()
 	open names for output as ff
