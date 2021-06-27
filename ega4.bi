@@ -80,7 +80,7 @@ public function converts(names as string,src as string,p1 as any ptr)as integer
 	head1.signature=cvi("EGA4")
 	head1.w=ww*8
 	head1.h=h
-	byten=7
+	bitn=7
 	img=allocate(www+8)
 		for y=0 to h-1
 			for x= 0 to w-1
@@ -185,7 +185,7 @@ public function loadsega(names as string)as any ptr
 	p1=imagecreate(w,h,0)
 	hh=ww*h
 	www=(ww*h)*4
-	byten=7
+	bitn=7
 	img=allocate(www+8)
 	get #ff,,*img,www
 	close #ff
