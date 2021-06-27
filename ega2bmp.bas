@@ -7,3 +7,4 @@ p1=loadsega(command(1))
 put (0,0),p1,pset
 bsave command(2),p1
 sleep 10000
+imagedestroy(p1)

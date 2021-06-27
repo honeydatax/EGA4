@@ -7,3 +7,4 @@ line (0,0)-(640,480),rgb(255,64,255),bf
 put (0,0),p1,pset
 converts (command(2),command(1),p1)
 sleep 10000
+imagedestroy(p1)
