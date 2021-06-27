@@ -84,7 +84,7 @@ public function converts(names as string,src as string,p1 as any ptr)as integer
 	head1.signature=cvi("EGA4")
 	head1.w=ww*8
 	head1.h=h
-	byten=7
+	bitn=7
 	sred="static unsigned char picure_red[] = {"+chr(13)+chr(10)
 	sgreen="static unsigned char picure_green[] = {"+chr(13)+chr(10)
 	sblue="static unsigned char picure_blue[] = {"+chr(13)+chr(10)
