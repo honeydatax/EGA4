@@ -76,7 +76,7 @@ static unsigned char mask_bits[] = {
 	screens(lowega);
 	VID=getptr()+0x2000;
 	ii=0;
-	backs(VID,(int)size,rose);
+	backs(VID,(int)size,8);
 	
 	n=0;
 	nn=0;
@@ -84,7 +84,7 @@ static unsigned char mask_bits[] = {
 		if (xxx!=xxx1 || yyy!=yyy1){
 			graphics (xxx,yyy,ship_width,ship_height,ship_bits,rose+brish);
 			refresh(VIDEO,size,VID);
-			graphics (xxx,yyy,ship_width,ship_height,ship_bits,rose);
+			graphics (xxx,yyy,ship_width,ship_height,mask_bits,8);
 			xxx1=xxx;
 			yyy1=yyy;
 		}
